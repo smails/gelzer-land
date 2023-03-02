@@ -1,0 +1,81 @@
+.banner
+  padding: 25rem 0 10rem
+  background-color: #0b60dd
+  background-repeat: no-repeat
+  background-image: url(../img/banner-bg.jpg)
+  background-position: right center
+  background-size: contain
+  color: #fff
+  &__inner
+    display: flex
+    align-items: center
+    max-width: 1690px
+    gap: 3vw
+  picture
+    max-width: 40%
+  &__pic
+    width: 100%
+    vertical-align: middle
+  &__content
+    max-width: 40%
+  &__title
+    +fs(40px)
+    text-transform: uppercase
+    font-weight: 700
+    position: relative
+    z-index: 1
+    display: inline-block
+    &:before
+      content: ''
+      width: calc(100% + 8px)
+      height: calc(100% + 5px)
+      display: block
+      position: absolute
+      left: -4px
+      top: -3.5px
+      z-index: -1
+      background: $c2
+      border-radius: 4px
+      transition: .5s ease
+  &__sign
+    +fs(35px)
+    text-transform: uppercase
+    font-weight: 700
+    position: relative
+    z-index: 1
+    line-height: 1.5
+    display: inline-block
+    margin-top: 5rem
+    span
+      position: relative
+      color: #fff
+      &:before
+        content: ''
+        width: calc(100% + 8px)
+        height: calc(100% + 5px)
+        display: block
+        position: absolute
+        left: -4px
+        top: -3.5px
+        z-index: -1
+        background: $c2
+        border-radius: 4px
+        transition: .5s ease
+  &__list
+    display: flex
+    gap: 5vw
+    margin-top: 5rem
+  &__item
+    text-align: center
+  &__caption
+    +fs(20px)
+    font-weight: 500
+  &__price
+    +fs(30px)
+    font-weight: 700
+    padding: 10px 15px
+    border-radius: 4px
+    background: $c2
+    display: inline-block
+    margin-top: 1rem
+    line-height: .9

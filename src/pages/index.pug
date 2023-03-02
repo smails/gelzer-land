@@ -2,5 +2,31 @@ include ../static/pug/head
 +head('Главная')
 body
   +header()
-  
+  include ../modules/banner/banner
+  include ../modules/service/service
+  include ../modules/vantage/vantage
+  include ../modules/gallery/gallery
+  include ../modules/brand/brand
+  include ../modules/contacts/contacts
+
++b.modal(data-type="#call")
+  +e.container
+    +e.BUTTON.close
+    +e.P.title Связаться с нами
+    +e.FORM.action
+      +e.group
+        +e.SPAN.name Ваше имя*
+        +e.INPUT.field.required(type="text")
+      +e.group
+        +e.SPAN.name E-mail*
+        +e.INPUT.field.required(type="text" name="email" placeholder="mail@mail.ru")
+      +e.group
+        +e.SPAN.name Телефон*
+        +e.INPUT.field.required(type="tel")
+      +e.group
+        +e.SPAN.name Сообщение
+        +e.TEXTAREA.field_textarea
+      +e.polit Нажимая кнопку отправить Вы даете согласие на обработку персональных данных
+      +e.BUTTON.submit.btn Отправить
+
 script(src="/js/common.js") 

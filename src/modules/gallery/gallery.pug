@@ -1,0 +1,7 @@
++b.gallery
+  +e.P.title.display-2.text-center Наш сервис
+  +e.list
+    - for(var i = 0; i < 12; i++){
+      +e.A.picture(href='/img/gallery-'+ i +'.jpg' data-fancybox)
+        +e.IMG.pic(src='/img/gallery-'+ i +'.jpg' alt='')
+    - }

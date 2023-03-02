@@ -1,0 +1,148 @@
+.system
+  position: relative
+  margin-top: -5rem
+  &:after
+    content: ''
+    width: 100%
+    height: 100%
+    background: rgba(#000, .5)
+    display: block
+    top: 0
+    left: 0
+    position: absolute
+  &__pic
+    width: 100%
+    height: 500px
+    background-image: url(../img/stend.jpg)
+    background-position: center
+    background-size: cover
+    background-attachment: fixed
+
+.vantage
+  background: $c2
+  padding: 5rem 0
+  color: #fff
+  &__list
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    margin-top: 3rem
+  &__item
+    max-width: 210px
+    text-align: center
+  &__icon
+    +fs(50px)
+    color: $c4
+    margin-bottom: 2rem
+  &__txt
+    +fs(18px)
+    text-transform: uppercase
+
+.befaft
+  &__inner
+    display: flex
+    align-items: center
+    gap: 3vw
+  &__box
+    width: 55%
+    height: 500px
+    flex-shrink: 0
+    position: relative
+  &__view
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    overflow: hidden
+    &_before
+      z-index: 2
+      &:before
+        content: 'ДО'
+        +fs(20px)
+        font-weight: 700
+        padding: 10px 15px
+        border-radius: 4px
+        background: rgba(#000, .7)
+        display: inline-block
+        margin-top: 1rem
+        line-height: .9
+        color: #fff
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 10px
+    &_after
+      z-index: 1
+      &:before
+        content: 'ПОСЛЕ'
+        +fs(20px)
+        font-weight: 700
+        padding: 10px 15px
+        border-radius: 4px
+        background: rgba(#000, .7)
+        display: inline-block
+        margin-top: 1rem
+        line-height: .9
+        color: #fff
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: 10px
+  &__pic
+    width: 100%
+    height: 100%
+    object-fit: cover
+  &__drag
+    width: 5px
+    height: 100%
+    background-color: $c1
+    cursor: pointer
+    z-index: 300
+    position: absolute
+    top: 0
+    z-index: 3
+    &:before
+      content: '<>'
+      width: 50px
+      height: 50px
+      border-radius: 100%
+      background: rgba(0, 0, 0, .7)
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      font-weight: 700
+      color: #fff
+      display: flex
+      justify-content: center
+      align-items: center
+      +fs(25px)
+      letter-spacing: 2px
+  &__title
+    text-transform: uppercase
+    margin-bottom: 2rem
+    +fs(20px)
+    font-weight: 600
+    line-height: 1.3
+    span
+      position: relative
+      color: #fff
+      &:before
+        content: ''
+        width: calc(100% + 5px)
+        height: calc(100% + 5px)
+        display: block
+        position: absolute
+        left: -2px
+        top: -2.5px
+        z-index: -1
+        background: $c5
+        transition: .5s ease
+        border-radius: 4px
+  &__txt
+    line-height: 1.4
+    font-style: italic
+  &__call
+    margin-top: 3rem
+    

@@ -1,0 +1,72 @@
+.map
+  height: 500px
+
+.contacts
+  background: $c2
+  padding: 3rem 0 0
+  color: #fff
+  &__inner
+    display: flex
+    justify-content: space-between
+    gap: 40px
+  &__left
+    flex-grow: 1
+    width: 75%
+    padding-top: 2rem
+  &__right
+    width: 23%
+  &__top,&__bottom,&__phones
+    display: flex
+    gap: 3vw
+  &__phone, &__mail, &__addr, &__time
+    +fs(18px)
+    font-weight: 600
+    vertical-align: middle
+    i
+      +fs(22px)
+      color: $c4
+      vertical-align: middle
+    span
+      vertical-align: middle
+  &__bottom
+    margin-top: 2rem
+  &__signup
+    margin-bottom: 1rem
+    width: 100%
+  &__call
+    width: 100%
+  &__social
+    display: flex
+    gap: 5px
+    margin-top: 1rem
+  &__soc
+    width: 40px
+    height: 40px
+    display: flex
+    justify-content: center
+    align-items: center
+    line-height: 1
+    +fs(20px)
+    border-radius: 4px
+    transition: .5s ease
+    &_vk
+      background: #0077ff
+    &_telegram
+      background: #0088cc
+    &_whatsapp
+      background: #25d366
+    &_viber
+      background: #7360F2
+    &:hover
+      background: $c3
+
+
+
+.footer-logo
+  background: $c2
+  text-align: center
+  padding: 3rem 0
+  color: #fff
+  margin-top: -3rem
+  &__sign
+    margin-top: 2rem

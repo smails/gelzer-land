@@ -1,0 +1,32 @@
+.brand
+  &__list
+    margin-top: 3rem
+  &__picture
+    height: 100%
+  &__pic
+    max-height: 100%
+    object-fit: contain
+  picture
+    height: 100%
+    display: block
+    display: flex
+    align-items: center
+    justify-content: center
+  .slick-arrow
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    z-index: 3
+    +fs(30px)
+    transition: .5s ease
+    &:hover
+      color: $c5
+  .slick-prev
+    left: 0
+  .slick-next
+    right: 0
+  .slick-slide
+    height: 150px
+  .slick-list
+    padding: 0 30px 0 50px
+    box-sizing: border-box
