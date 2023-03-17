@@ -1,11 +1,15 @@
 .brand
   &__list
     margin-top: 3rem
+    +screen('max', 600)
+      margin-top: 2rem
   &__picture
     height: 100%
   &__pic
     max-height: 100%
     object-fit: contain
+    +screen('max', 600)
+      max-width: 100%
   picture
     height: 100%
     display: block
@@ -27,6 +31,10 @@
     right: 0
   .slick-slide
     height: 150px
+    opacity: 0
+    transition: .5s ease
+  .slick-active
+    opacity: 1
   .slick-list
     padding: 0 30px 0 50px
     box-sizing: border-box

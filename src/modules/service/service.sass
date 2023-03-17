@@ -3,11 +3,28 @@
     display: flex
     align-items: center
     border-bottom: 1px solid #e4e4e4
+    +screen('max', 600)
+      display: block
+      padding-bottom: 3rem
     &_reverse
       flex-flow: row-reverse
     picture
-      max-width: 50%
+      width: 50%
       flex-shrink: 0
+      display: flex
+      justify-content: center
+      align-items: center
+      background: #fff
+      height: 330px
+      padding: 10px
+      box-sizing: border-box
+      +screen('max', 1200)
+        height: 300px
+      +screen('max', 1023)
+        height: 260px
+      +screen('max', 600)
+        width: 100%
+        height: 210px
   &__pic
     vertical-align: middle
     max-width: 100%
@@ -20,9 +37,14 @@
     +fs(22px)
     font-weight: 600
     line-height: 1.3
+    +screen('max', 1200)
+      +fs(18px)
     span
       position: relative
       color: #fff
+      +screen('max', 1023)
+        display: inline-block
+        margin-right: 10px
       &:before
         content: ''
         width: calc(100% + 8px)
@@ -35,6 +57,9 @@
         background: $c5
         transition: .5s ease
         border-radius: 4px
+    br
+      +screen('max', 1023)
+        display: none
   &__txt
     line-height: 1.4
   &__more

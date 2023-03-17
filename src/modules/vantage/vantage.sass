@@ -1,6 +1,8 @@
 .system
   position: relative
   margin-top: -5rem
+  +screen('max', 600)
+    margin-top: -3rem
   &:after
     content: ''
     width: 100%
@@ -17,37 +19,62 @@
     background-position: center
     background-size: cover
     background-attachment: fixed
-
+    +screen('max', 600)
+      height: 300px
 .vantage
   background: $c2
   padding: 5rem 0
   color: #fff
+  +screen('max', 600)
+    padding: 3rem 0
   &__list
     display: flex
     justify-content: space-around
     flex-wrap: wrap
+    gap: 15px
     margin-top: 3rem
+    +screen('max', 600)
+      gap: 20px 0
   &__item
     max-width: 210px
     text-align: center
+    flex-shrink: 0
+    +screen('max', 600)
+      width: 48%
   &__icon
     +fs(50px)
     color: $c4
     margin-bottom: 2rem
+    +screen('max', 600)
+      margin-bottom: 1rem
   &__txt
     +fs(18px)
     text-transform: uppercase
+    +screen('max', 1200)
+      +fs(16px)
+    +screen('max', 600)
+      +fs(12px)
 
 .befaft
   &__inner
     display: flex
     align-items: center
     gap: 3vw
+    +screen('max', 1023)
+      display: block
   &__box
     width: 55%
-    height: 500px
+    height: 440px
     flex-shrink: 0
     position: relative
+    +screen('max', 1200)
+      height: 350px
+    +screen('max', 1023)
+      width: 100%
+      height: 400px
+      margin-bottom: 2rem
+    +screen('max', 600)
+      height: 225px
   &__view
     width: 100%
     height: 100%
@@ -65,13 +92,14 @@
         border-radius: 4px
         background: rgba(#000, .7)
         display: inline-block
-        margin-top: 1rem
         line-height: .9
         color: #fff
         position: absolute
         top: 50%
         transform: translateY(-50%)
         left: 10px
+        +screen('max', 1023)
+          +fs(16px)
     &_after
       z-index: 1
       &:before
@@ -82,17 +110,22 @@
         border-radius: 4px
         background: rgba(#000, .7)
         display: inline-block
-        margin-top: 1rem
         line-height: .9
         color: #fff
         position: absolute
         top: 50%
         transform: translateY(-50%)
         right: 10px
+        +screen('max', 1023)
+          +fs(16px)
   &__pic
-    width: 100%
+    width: 660px
     height: 100%
     object-fit: cover
+    +screen('max', 1200)
+      width: 52vw
+    +screen('max', 1023)
+      width: calc(100vw - 4rem)
   &__drag
     width: 5px
     height: 100%
@@ -114,11 +147,10 @@
       transform: translate(-50%, -50%)
       font-weight: 700
       color: #fff
-      display: flex
-      justify-content: center
-      align-items: center
+      line-height: 45px
+      text-align: center
       +fs(25px)
-      letter-spacing: 2px
+      letter-spacing: 3px
   &__title
     text-transform: uppercase
     margin-bottom: 2rem
@@ -128,6 +160,9 @@
     span
       position: relative
       color: #fff
+      +screen('max', 1200)
+        display: inline-block
+        margin-top: 1rem
       &:before
         content: ''
         width: calc(100% + 5px)

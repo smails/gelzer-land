@@ -48,8 +48,12 @@ const build = $.gulp.series(
   $.gulp.parallel(pug, sass, js, img, font, icon),
 )
 
+const devBefore = $.gulp.series(
+  $.gulp.parallel(pug, sass, js),
+)
+
 const dev = $.gulp.series(
-  build,
+  devBefore,
   $.gulp.parallel(watcher, server)
 )
 

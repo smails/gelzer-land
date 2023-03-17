@@ -4,7 +4,8 @@ body
   font-size: 16px
   font-weight: 400
   font-family: $font-family
-
+  &.open
+    overflow: hidden
 .inner
   max-width: 1240px
   width: 100%
@@ -14,6 +15,8 @@ body
 
 .section
   margin: 5rem 0
+  +screen('max', 600)
+    margin: 3rem 0
 
 .modal
   position: fixed
@@ -36,6 +39,10 @@ body
     border-radius: 4px
     padding: 70px
     box-sizing: border-box
+    max-height: 100%
+    overflow: auto
+    +screen('max', 600)
+      padding: 30px 20px
   &__close
     position: absolute
     top: 20px
@@ -110,7 +117,73 @@ body
       color: $c2
     &:hover
       background: rgba($c4, .1)
+    &.error
+      border-bottom-color: red
   &__polit
     margin: 2rem 0
     +fs(14px)
     color: #a3a3a3
+  &__box
+    h2, h3, h4
+      margin-bottom: 1.5rem
+      display: inline-block
+      position: relative
+      color: #fff
+      +screen('max', 1023)
+        display: inline-block
+      &:before
+        content: ''
+        width: calc(100% + 8px)
+        height: calc(100% + 5px)
+        display: block
+        position: absolute
+        left: -4px
+        top: -2.5px
+        z-index: -1
+        background: $c5
+        transition: .5s ease
+        border-radius: 4px
+    p
+      margin-bottom: 10px
+      +screen('max', 600)
+        margin-bottom: 5px
+        +fs(15px)
+    ol, ul
+      list-style: auto inside
+      margin: 10px 0
+      +screen('max', 600)
+        margin: 5px 0
+        +fs(15px)
+  &__signup
+    margin-top: 1rem
+
+.up
+  +fs(50px)
+  position: fixed
+  right: 2vw
+  bottom: 2vw
+  color: $c5
+  cursor: pointer
+  display: none
+  +screen('max', 600)
+    +fs(30px)
+
+.review
+  &__inner
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 5vw
+    +screen('max', 600)
+      display: block
+  &__title
+    margin-bottom: 20px
+    +screen('max', 600)
+      text-align: center
+  &__text
+    +fs(20px)
+    +screen('max', 600)
+      +fs(16px)
+      margin-bottom: 20px
+
+.jGrowl
+  z-index: 9999999!important

@@ -1,5 +1,7 @@
 .map
   height: 500px
+  +screen('max', 600)
+    height: 300px
 
 .contacts
   background: $c2
@@ -9,23 +11,51 @@
     display: flex
     justify-content: space-between
     gap: 40px
+    +screen('max', 600)
+      display: block
   &__left
     flex-grow: 1
     width: 75%
-    padding-top: 2rem
+    +screen('max', 600)
+      width: 100%
   &__right
     width: 23%
+    +screen('max', 1200)
+      width: 30%
+    +screen('max', 600)
+      width: 100%
+      margin-top: 2rem
   &__top,&__bottom,&__phones
     display: flex
     gap: 3vw
+  &__top, &__bottom
+    +screen('max', 600)
+      flex-wrap: wrap
+      justify-content: space-around
   &__phone, &__mail, &__addr, &__time
     +fs(18px)
     font-weight: 600
     vertical-align: middle
+    display: flex
+    +screen('max', 1200)
+      +fs(15px)
+    +screen('max', 600)
+      +fs(14px)
     i
       +fs(22px)
       color: $c4
       vertical-align: middle
+      margin-right: 5px
+      +screen('max', 600)
+        +fs(18px)
+    img
+      vertical-align: middle
+      margin-right: 5px
+      +screen('max', 600)
+        width: 20px
+    &[href]
+      &:hover
+        color: $c4
     span
       vertical-align: middle
   &__bottom
@@ -35,10 +65,14 @@
     width: 100%
   &__call
     width: 100%
+    +screen('max', 1023)
+      padding: 1.5rem 1rem
   &__social
     display: flex
     gap: 5px
     margin-top: 1rem
+    +screen('max', 600)
+      justify-content: flex-end
   &__soc
     width: 40px
     height: 40px
@@ -49,6 +83,10 @@
     +fs(20px)
     border-radius: 4px
     transition: .5s ease
+    +screen('max', 600)
+      width: 30px
+      height: 30px
+      +fs(16px)
     &_vk
       background: #0077ff
     &_telegram
@@ -64,9 +102,18 @@
 
 .footer-logo
   background: $c2
-  text-align: center
-  padding: 3rem 0
+  padding-bottom: 2rem
   color: #fff
-  margin-top: -3rem
+  margin-top: -5rem
+  +screen('max', 600)
+    margin-top: -2.5rem
   &__sign
-    margin-top: 2rem
+    margin-top: 1rem
+    +screen('max', 600)
+      margin-top: 3rem
+      +fs(14px)
+      text-align: center
+  &__pic
+    width: 150px
+    +screen('max', 600)
+      width: 100px

@@ -4,7 +4,6 @@ mixin header()
       +e.left
         +e.IMG.pic(src='/img/logo.png' alt='')
         +e.P.sign Ремонт рулевых реек в Нижнем Новгороде
-        +e.P.time с 9:00 до 19:00
       +e.middle
         +e.col
           +e.phones
@@ -24,7 +23,7 @@ mixin header()
                 +e.A.link(href="#contacts") Контакты
         +e.col
           +e.A.mail(href="mailto:info@gelzer.ru")
-            i.icofont-mail 
+            img(src="/img/icon-mail.png", alt="")
             span info@gelzer.ru
           +e.social
             +e.A.soc_telegram(href='#')
@@ -34,5 +33,38 @@ mixin header()
             +e.A.soc_viber(href='#')
               i.icofont-viber
       +e.right
-        +e.A.call.btn_outline.js-open-modal(href="#call") Заказать звонок
-        +e.A.signup.btn(href="#call") Записаться на ремонт
+        +e.P.time Режим работы: с 9:00 до 19:00
+        +e.A.signup.btn.js-open-modal(href="#call") Записаться на ремонт
+      +e.mobile-menu
+        .burger
+          span
+  +b.mobile-menu
+    +e.inner
+      +e.phones
+        +e.A.phone(href="tel:+79306704040") 
+          i.icofont-phone
+          span +7 (930) 670-40-40
+        +e.A.phone(href="tel:+79306803030") 
+          i.icofont-phone
+          span +7 (930) 680-30-30
+      +e.A.mail(href="mailto:info@gelzer.ru")
+        img(src="/img/icon-mail.png", alt="")
+        span info@gelzer.ru
+      +e.nav
+        +e.UL.list
+          +e.LI.item
+            +e.A.link(href="#service") Услуги
+          +e.LI.item
+            +e.A.link(href="#") Отзывы
+          +e.LI.item
+            +e.A.link(href="#contacts") Контакты
+      +e.social
+        +e.A.soc_telegram(href='#')
+          i.icofont-telegram
+        +e.A.soc_whatsapp(href='#')
+          i.icofont-whatsapp
+        +e.A.soc_viber(href='#')
+          i.icofont-viber
+      +e.info
+        +e.P.time Режим работы: с 9:00 до 19:00
+        +e.A.signup.btn.js-open-modal(href="#call") Записаться на ремонт

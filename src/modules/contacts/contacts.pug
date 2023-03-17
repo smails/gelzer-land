@@ -8,13 +8,13 @@
         +e.phones
           +e.A.phone(href="tel:+79306704040") 
             i.icofont-phone
-            | +7 (930) 670-40-40
+            span +7 (930) 670-40-40
           +e.A.phone(href="tel:+79306803030") 
             i.icofont-phone
-            | +7 (930) 680-30-30
+            span +7 (930) 680-30-30
         +e.A.mail(href="mailto:info@gelzer.ru") 
-          i.icofont-mail 
-          | info@gelzer.ru
+          img(src="/img/icon-mail.png", alt="")
+          span info@gelzer.ru
       +e.bottom
         +e.addr
           i.icofont-google-map 
@@ -36,5 +36,6 @@
           i.icofont-viber
 
 +b.footer-logo
-  +e.IMG.pic(src='/img/logo.png' alt='')
-  +e.P.sign ©2023 GELZER. Все права защищены.
+  +e.inner.inner
+    +e.IMG.pic(src='/img/logo.png' alt='')
+    +e.P.sign ©2023 GELZER. Все права защищены.

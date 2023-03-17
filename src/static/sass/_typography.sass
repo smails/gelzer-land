@@ -2,12 +2,24 @@ h1, .display-1
   color: $c1
 h2, .display-2
   color: inherit
-  +fs(30px)
+  +fs(35px)
   text-transform: uppercase
+  font-family: serif
+  +screen('max', 600)
+    +fs(30px)
 h3, .display-3
-  color: $c1
+  color: inherit
+  +fs(25px)
+  text-transform: uppercase
+  font-family: serif
+  +screen('max', 600)
+    +fs(20px)
 h4, .display-4
   color: $c1
+  color: inherit
+  +fs(16px)
+  text-transform: uppercase
+  font-family: serif
 
 .text-uppercase
   text-transform: uppercase

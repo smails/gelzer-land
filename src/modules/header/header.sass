@@ -7,6 +7,9 @@
   left: 0
   width: 100%
   background: rgba(#000, .3)
+  z-index: 999
+  +screen('max', 600)
+    padding: 2rem 0
   &__inner
     display: flex
     justify-content: space-between
@@ -15,19 +18,37 @@
   &__left
     text-align: center
     max-width: 15%
+    +screen('max', 1200)
+      max-width: 20%
+    +screen('max', 600)
+      max-width: 50%
+      text-align: left
   &__pic
     max-width: 100%
     vertical-align: middle
+    +screen('max', 1200)
+      width: 150px
   &__sign
-    margin: 1.5rem 0 1rem
+    margin-top: 1.5rem
+    +screen('max', 1200)
+      +fs(14px)
+      margin-top: 1rem
+    +screen('max', 600)
+      display: none
   &__time
     line-height: 1
     font-weight: 600
+    text-align: right
+    margin: 5px 0
+    +screen('max', 1200)
+      text-align: center
   &__middle
     display: flex
     justify-content: space-between
     gap: 5vw
     flex-shrink: 0
+    +screen('max', 1200)
+      display: none
   &__phones
     display: flex
     justify-content: space-evenly
@@ -36,10 +57,17 @@
     +fs(18px)
     font-weight: 600
     vertical-align: middle
+    transition: .5s ease
+    display: flex
     i
       +fs(22px)
       color: $c4
       vertical-align: middle
+    img
+      vertical-align: middle
+      margin-right: 5px
+    &:hover
+      color: $c4
     span
       vertical-align: middle
   &__nav
@@ -66,6 +94,8 @@
     +fs(20px)
     border-radius: 4px
     transition: .5s ease
+    &_vk
+      background: #0077ff
     &_telegram
       background: #0088cc
     &_whatsapp
@@ -79,16 +109,22 @@
     margin-bottom: 1rem
   &__signup
     display: block
+  &__mobile-menu
+    +screen('min', 1201)
+      display: none
+  &__right
+    +screen('max', 1200)
+      margin-left: -7vw
+    +screen('max', 600)
+      display: none
 
 .burger
   display: block
   position: relative
-  width: 20px
+  width: 30px
   height: 17px
   flex-shrink: 0
   z-index: 3
-  +screen('min', 1023)
-    display: none
   &::after,
   &::before
     content: ""
@@ -96,7 +132,7 @@
     position: absolute
     background: #fff
     width: 100%
-    height: 3px
+    height: 2px
     transition: top .2s .2s,transform .2s
     transform-origin: cetner
   &::after
@@ -106,7 +142,7 @@
   span
     display: block
     width: 100%
-    height: 3px
+    height: 2px
     transition: opacity .25s,background .2s .5s
     transform-origin: cetner
     background: #fff
@@ -115,11 +151,88 @@
   &.open
     &::before,
     &::after
-      top: 13px
-      transition: top .2s,transform .2s .2sx
+      top: 8px
+      transition: top .2s,transform .2s .2s
     &::after
       transform: rotate(-45deg)
     &::before
       transform: rotate(45deg)
     span
       opacity: 0
+
+.mobile-menu
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 99
+  width: 100%
+  height: 100%
+  background: $c2
+  color: #fff
+  display: none
+  &__inner
+    display: flex
+    flex-flow: column
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 100%
+  &__phone, &__mail
+    +fs(18px)
+    font-weight: 600
+    vertical-align: middle
+    transition: .5s ease
+    display: flex
+    margin-bottom: 10px
+    i
+      +fs(22px)
+      color: $c4
+      vertical-align: middle
+    img
+      vertical-align: middle
+      margin-right: 5px
+    &:hover
+      color: $c4
+    span
+      vertical-align: middle
+  &__nav
+    margin-top: 2rem
+  &__item
+    text-align: center
+  &__link
+    font-weight: 600
+    transition: .5s ease
+    &:hover
+      color: $c4
+  &__social
+    display: flex
+    gap: 5px
+    margin-top: 2rem
+  &__soc
+    width: 40px
+    height: 40px
+    display: flex
+    justify-content: center
+    align-items: center
+    line-height: 1
+    +fs(20px)
+    border-radius: 4px
+    transition: .5s ease
+    &_vk
+      background: #0077ff
+    &_telegram
+      background: #0088cc
+    &_whatsapp
+      background: #25d366
+    &_viber
+      background: #7360F2
+    &:hover
+      background: $c3
+  &__time
+    text-align: center
+    margin-bottom: 10px
+  &__info
+    margin-top: 2rem
+    display: none
+    +screen('max', 600)
+      display: block
